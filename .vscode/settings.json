@@ -1,4 +1,4 @@
 {
     "git.ignoreLimitWarning": true,
-    "python.pythonPath": "djangoenv/bin/python3.5"
+    "python.pythonPath": "djangoenv/bin/python"
 }
