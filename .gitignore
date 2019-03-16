@@ -1,0 +1,4 @@
+djangoenv/
+electro/electro/__pycache__/
+electro/electro_app/migrations/
+electro/electro_app/__pycache__/
