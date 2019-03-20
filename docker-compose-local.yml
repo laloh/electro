@@ -1,0 +1,19 @@
+version: '3'
+services:
+    postgres:
+        container_name: electro
+        image: postgres:9.6
+        environment:
+            - POSTGRES_USER=electro
+            - POSTGRES_PASSWORD=electro94
+            - POSTGRES_DB=electro
+        volumes:
+            - ".dbcache:/var/lib/postgresql/data"
+        ports:
+            - "5433:5432"      
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "100M"
+                max-file: "10"
+    
