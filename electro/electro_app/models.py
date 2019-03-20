@@ -1,5 +1,15 @@
 from django.db import models
 
+"""
+TODO:
+[x] Investigar como enviar los Modelos a PostgreSQL nueva versión.
+[x] Hacer Pruebas de Inserción.
+
+FIXME:
+
+"""
+
+
 # Create your models here.
 class Product(models.Model):
     name = models.CharField(max_length=256)
