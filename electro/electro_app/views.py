@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
+from .models import Product, Images
 
 """
 TODO:
@@ -11,5 +12,6 @@ TODO:
 
 # Create your views here.
 def index(request):
-    return render(request,'electro/index.html')
-    
+    image_list = Images.objects.all()
+    image_dict = {"images":image_list}
+    return render(request,'electro/index.html', context=image_dict)
