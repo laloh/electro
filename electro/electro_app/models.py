@@ -6,6 +6,11 @@ TODO:
 [x] Hacer Pruebas de Inserción.
 [x] Agregar URL para la Imagen
 [ ] Utilizar Fake data para popular información
+[ ] Los Productos más vendidos serán los ultimos 10 Ids Insertados
+[ ] Los más vendidos tienen que ser seleccionados manualmente
+[ ] Actualizar los precios utilizando el código de Amazon (Todos los días)
+[ ] Si el precio viejo no existe, que Django se encargue de rebajarlo
+[ ] Programar una Barra de progreso
 
 FIXME:
 

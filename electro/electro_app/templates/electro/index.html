@@ -66,7 +66,7 @@
 						</div>
 						<!-- /LOGO -->
 
-						<!-- SEARCH BAR -->
+						{% comment %} <!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
 								<form>
@@ -80,7 +80,7 @@
 								</form>
 							</div>
 						</div>
-						<!-- /SEARCH BAR -->
+						<!-- /SEARCH BAR --> {% endcomment %}
 
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
@@ -114,14 +114,14 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Hot Deals</a></li>
-						<li><a href="#">Categories</a></li>
+						<li class="active"><a href="#">Inicio</a></li>
+						<li><a href="#">Inventario</a></li>
+						{% comment %} <li><a href="#">Categories</a></li>
 						<li><a href="#">Laptops</a></li>
 						<li><a href="#">Smartphones</a></li>
 						<li><a href="#">Cameras</a></li>
 						<li><a href="#">Accessories</a></li>
-					</ul>
+					</ul> {% endcomment %}
 					<!-- /NAV -->
 				</div>
 				<!-- /responsive-nav -->
@@ -197,10 +197,10 @@
 							<h3 class="title">Nuevos Productos</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
-									<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
+									{% comment %} <li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li> {% endcomment %}
+									{% comment %} <li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
 									<li><a data-toggle="tab" href="#tab1">Cameras</a></li>
-									<li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+									<li><a data-toggle="tab" href="#tab1">Accessories</a></li> {% endcomment %}
 								</ul>
 							</div>
 						</div>
@@ -222,7 +222,7 @@
 											<div class="product-img">
 												<img src={{image.url}} alt="">
 												<div class="product-label">
-													<span class="sale">-30%</span>
+													{% comment %} <span class="sale">-30%</span> {% endcomment %}
 													<span class="new">NUEVO</span>
 												</div>
 											</div>
@@ -266,7 +266,7 @@
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
-
+{% comment %} 
 		<!-- HOT DEAL SECTION -->
 		<div id="hot-deal" class="section">
 			<!-- container -->
@@ -311,7 +311,7 @@
 			</div>
 			<!-- /container -->
 		</div>
-		<!-- /HOT DEAL SECTION -->
+		<!-- /HOT DEAL SECTION --> {% endcomment %}
 
 		<!-- SECTION -->
 		<div class="section">
@@ -323,13 +323,13 @@
 					<!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title">
-							<h3 class="title">Top selling</h3>
+							<h3 class="title">Más vendidos</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab2">Laptops</a></li>
+									{% comment %} <li class="active"><a data-toggle="tab" href="#tab2">Laptops</a></li>
 									<li><a data-toggle="tab" href="#tab2">Smartphones</a></li>
 									<li><a data-toggle="tab" href="#tab2">Cameras</a></li>
-									<li><a data-toggle="tab" href="#tab2">Accessories</a></li>
+									<li><a data-toggle="tab" href="#tab2">Accessories</a></li> {% endcomment %}
 								</ul>
 							</div>
 						</div>

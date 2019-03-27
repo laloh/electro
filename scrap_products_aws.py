@@ -1,6 +1,7 @@
 from lxml import html  
 import csv,os,json
 import requests
+import pandas as pd
 from time import sleep
  
 """
@@ -9,7 +10,9 @@ TODO:
     [ ] Enlistar Elementos que cubre el Modelo
     [ ] Investigar como recuperar los Elementos Restantes
     [ ] Crear Test para el Modelo 
+    [ ] Guardar el CSV Como UTF-8 (Siempre como nuevo Archivo)
 """
+
 """
 FIXME:
     Fields Retrieved:
@@ -25,8 +28,21 @@ FIXME:
     [ ] EXTRA_INFO
     [ ] PRODUCTS
     [ ] REVIEWS
+"""
 
 """
+    EL SCRAPPING MANUAL CORRESPONDE A :
+    [ ] PRECIO
+    [ ] IMAGEN 
+
+    TOMAR EN CUENTA:
+    [ ] LOS PRECIOS DE AMAZON CAMBIAN TODOS LOS DIAS
+    [ ]
+"""
+
+def get_csv_data(file):
+    df = pd.read_csv(file, encoding='utf-8')
+    return df
 
 def AmzonParser(url):
     headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'}
@@ -73,9 +89,9 @@ def AmzonParser(url):
         except Exception as e:
             print(e)
  
-def ReadAsin():
+def ReadAsin(product_codes):
     # AsinList = csv.DictReader(open(os.path.join(os.path.dirname(__file__),"Asinfeed.csv")))
-    AsinList = ['B01NASUGOS',]
+    AsinList = product_codes
     extracted_data = []
     for i in AsinList:
         url = "http://www.amazon.com.mx/dp/"+i
@@ -83,23 +99,25 @@ def ReadAsin():
         extracted_data.append(AmzonParser(url))
         sleep(5)
     f=open('data.json','w')
-    json.dump(extracted_data,f,indent=4)
+    json.dump(extracted_data,f,indent=4, ensure_ascii=False)
  
  
 if __name__ == "__main__":
-    ReadAsin()
+    df = get_csv_data('productos.csv')
+    ReadAsin(list(df['codigo']))
+
 # If the embed above doesn’t work, you can download the code directly from here.
 
 # Modify the code shown below with a list of your own ASINs.
 
-def ReadAsin():
-  #Change the list below with the ASINs you want to track.
-    AsinList = ['B0071LSAR6',]
-    extracted_data = []
-    for i in AsinList:
-        url = "http://www.amazon.com/dp/"+i
-        extracted_data.append(AmzonParser(url))
-        sleep(5)
-    #Save the collected data into a json file.
-    f=open('data.json','w')
-    json.dump(extracted_data,f,indent=4)
+# def ReadAsin():
+#   #Change the list below with the ASINs you want to track.
+#     AsinList = ['B0071LSAR6',]
+#     extracted_data = []
+#     for i in AsinList:
+#         url = "http://www.amazon.com/dp/"+i
+#         extracted_data.append(AmzonParser(url))
+#         sleep(5)
+#     #Save the collected data into a json file.
+#     f=open('data.json','w')
+#     json.dump(extracted_data,f,indent=4)
